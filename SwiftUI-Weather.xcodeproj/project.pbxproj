@@ -14,6 +14,8 @@
 		FA4C0E552C5FC14200AD8D76 /* SwiftUI_WeatherTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA4C0E542C5FC14200AD8D76 /* SwiftUI_WeatherTests.swift */; };
 		FA4C0E5F2C5FC14200AD8D76 /* SwiftUI_WeatherUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA4C0E5E2C5FC14200AD8D76 /* SwiftUI_WeatherUITests.swift */; };
 		FA4C0E612C5FC14200AD8D76 /* SwiftUI_WeatherUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA4C0E602C5FC14200AD8D76 /* SwiftUI_WeatherUITestsLaunchTests.swift */; };
+		FA4C0E6D2C5FC22700AD8D76 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA4C0E452C5FC14000AD8D76 /* ContentView.swift */; };
+		FA4C0E6E2C5FC22900AD8D76 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA4C0E452C5FC14000AD8D76 /* ContentView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -266,6 +268,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FA4C0E6D2C5FC22700AD8D76 /* ContentView.swift in Sources */,
 				FA4C0E552C5FC14200AD8D76 /* SwiftUI_WeatherTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -276,6 +279,7 @@
 			files = (
 				FA4C0E5F2C5FC14200AD8D76 /* SwiftUI_WeatherUITests.swift in Sources */,
 				FA4C0E612C5FC14200AD8D76 /* SwiftUI_WeatherUITestsLaunchTests.swift in Sources */,
+				FA4C0E6E2C5FC22900AD8D76 /* ContentView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -430,6 +434,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -459,6 +464,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
