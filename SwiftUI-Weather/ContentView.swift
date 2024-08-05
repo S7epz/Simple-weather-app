@@ -8,8 +8,42 @@ import SwiftUI
 
 struct ContentView: View {
     
+    @State private var user: gitHubUser?
     @State private var isNight = false
     //State to keep the variable
+    
+    
+    
+    //async = async way - throws = to throw errors
+    func getUser() async throws -> gitHubUser {
+        
+        //endPoint = where to get the data from
+        let endPoint = "https://api.github.com/users/S7epz"
+        
+        //create an URL object
+        guard let url = URL(string: endPoint) else { throw GHError.invalidURL }
+        
+        //use URLSession to get data from the url object created above
+        //it returns a tuple of data and respose
+        let(data, response) = try await URLSession.shared.data(from: url)
+        
+        //check the response ( 404 or other errors )
+        guard let response = response as? HTTPURLResponse, response.statusCode == 200 else {
+            throw GHError.invalidURL
+        }
+        
+        
+        do {
+            let decoder = JSONDecoder()
+            decoder.keyDecodingStrategy = .convertFromSnakeCase
+            return try decoder.decode(gitHubUser.self, from: data)
+        } catch {
+            throw GHError.invalidURL
+        }
+    }
+    
+    
+    
     
     var body: some View {
 
@@ -33,6 +67,26 @@ struct ContentView: View {
                     
             }
                     Spacer()
+                
+                    .task {
+                        do{
+                            user = try await getUser()
+                        }catch GHError.invalidURL{
+                            print("invalid")
+                        }catch{
+                            print("ok")
+                        }
+                    }
+                
+                
+                if let user = user{
+                    Text(user.username)
+                }else{
+                    
+                }
+                
+                    
+                    
                 
                 Button{
                     isNight.toggle()
@@ -129,4 +183,13 @@ struct todayView: View {
     }
 }
 
+struct gitHubUser: Codable{
+    
+    let username: String
+    
+}
 
+
+enum GHError: Error {
+    case invalidURL
+}
