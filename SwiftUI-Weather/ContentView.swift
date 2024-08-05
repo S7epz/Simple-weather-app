@@ -80,9 +80,9 @@ struct ContentView: View {
                 
                 
                 if let user = user{
-                    Text(user.username)
+                    Text(user.login)
                 }else{
-                    
+                    Text("nil")
                 }
                 
                     
@@ -185,7 +185,7 @@ struct todayView: View {
 
 struct gitHubUser: Codable{
     
-    let username: String
+    let login: String
     
 }
 
